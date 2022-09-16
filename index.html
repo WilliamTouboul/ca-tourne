@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <svg id="circlesvg" width="883" height="666" viewBox="0 0 1500 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="oval"
+            d="M882.5 333C882.5 424.764 833.188 507.878 753.387 568.067C673.585 628.257 563.318 665.5 441.5 665.5C319.682 665.5 209.415 628.257 129.613 568.067C49.8125 507.878 0.5 424.764 0.5 333C0.5 241.236 49.8125 158.122 129.613 97.9326C209.415 37.7428 319.682 0.5 441.5 0.5C563.318 0.5 673.585 37.7428 753.387 97.9326C833.188 158.122 882.5 241.236 882.5 333Z"
+            stroke="black" />
+
+        <text id="zuzu" dx="000">
+            <textPath id="textpath" xlink:href="#oval">
+                Tous les problemes ont des solutions la seule réponse c'est l'évolution
+            </textPath>
+        </text>
+    </svg>
+
+    <script>
+        let circle = document.querySelector('#circlesvg');
+        let text = document.querySelector('#zuzu')
+
+        circle.addEventListener('load', function () {
+            setInterval(callMe, 10);
+            var ySpeed = 2;
+            var myY = 0;
+
+            function callMe() {
+                text.setAttribute('dx', myY);
+                myY += ySpeed;
+                console.info(myY);
+                if (myY > 2500 || myY < 0) {
+                    ySpeed = 2;
+                    text.setAttribute('dx', 0);
+                    myY = 0
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

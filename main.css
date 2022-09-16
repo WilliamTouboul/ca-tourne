@@ -1,0 +1,18 @@
+body {
+    background-color: brown;
+}
+
+#textpath {
+    color: black;
+    font-size: 50px;
+    letter-spacing: 5px;
+    fill: black
+}
+
+svg {
+    padding-left: 50px;
+}
+
+#zuzu {
+    transition: all .5s ease-in;
+}
